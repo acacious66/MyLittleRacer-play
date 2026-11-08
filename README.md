@@ -1,23 +1,23 @@
 # My Little Racer — Play
 
-A portrait HTML5 toy racing game. This repository contains the browser build and GitHub Pages deployment workflow. Development source is maintained separately.
+A portrait HTML5 toy racing game. This public repository contains only the browser build, release notes and GitHub Pages deployment workflow. Development source is maintained separately in a private repository.
 
 [Play My Little Racer](https://acacious66.github.io/MyLittleRacer-play/)
 
-## Web release — 2026-11-08
+## Web release — 2026-11-08: Coins, bomb rescue and rock music
 
-- A full-width straight practice road for round one; seeded random bends and width changes for rounds two and three. The same round keeps its layout during pause/resume, while a new round or replay gets a new seed.
-- Road-aware cones, tire stacks, construction barriers and slow side-to-side toy cars, introduced gradually with bounded turn rates and passable gaps. Guardrail collisions cost one life per continuous contact.
-- Neon garage and track, steering tilt, trails, collision feedback, and cosmetic car designs.
-- Swipe left/right to steer; swipe up to accelerate and down to brake. Diagonal gestures combine both actions. Keep holding the displaced gesture to maintain input; release to return gradually to cruise.
-- Keyboard: Left/Right to steer and Up/Down to accelerate/brake. Direction keys can be combined.
-- Three rounds of 4000 metres, with time limits of 30, 25 and 20 seconds. Reach the finish before the deadline while preserving at least one of three lives.
-- Beat your fastest successful time in each round. Completing all three rounds awards 100 points to unlock ribbon, pearl and starlight skins.
-- Original synthesized music and driving effects, controlled independently with symbol buttons.
-- Local persistence for customization, points, skins, timing records and audio preferences. Existing saves are supported. An unfinished series restarts after a page reload.
+- Collect coins along the road. Each cleared round awards 20 coins; completing all three rounds adds 100 coins. Exchange coins for cosmetic skins in the existing garage. A separate shop is deferred.
+- Existing points migrate to coins one-to-one, preserving skins, records and customization. Coins and settings remain local to this browser; there is no database, account or cross-device synchronization.
+- Each hazard group contains three individual bombs, staggered sideways and 160 world units apart, with room to dodge. Round one has two groups; later rounds have three. A shared water puddle appears 420 units after the last bomb.
+- Bomb contact starts an eight-second fuse shown on the car. Further bomb contacts do not reset it. Reach water before expiry to defuse it. An explosion costs one life and half the current round's road coins, rounded up and capped at ten; historical savings are protected.
+- Arming, ticking, urgent final-three-second warnings, water rescue and explosion sounds. Music and effects retain independent symbol controls; music starts after user interaction when enabled.
+- Three original synthesized rock tracks, one per round, with different riffs, keys and tempos. No third-party recordings or audio downloads.
+- Straight first round, seeded random bends and changing widths in later rounds, varied regular obstacles, neon presentation and cosmetic car customization.
+- Swipe left/right to steer and up/down to accelerate/brake; diagonal gestures combine inputs. Keyboard arrow keys support the same combinations.
+- Three rounds of 4000 metres with 30/25/20-second limits and three lives per round. Pause, exit, timing records and local persistence remain available.
 
-This branch updates the live site only after its pull request is merged into `main` and the Pages workflow succeeds. No server or account is required to play.
+This branch updates the live site only after its pull request is merged into `main` and the Pages workflow succeeds. The existing Pages workflow is unchanged. No game backend is required.
 
 ## Validation
 
-TypeScript checking, 58 unit tests, production build and desktop browser automation passed, including geometry sampling across 120 generated courses, a complete randomized three-round run, combined controls, timeout handling, rewards, persistence, mobile viewport layouts and audio behavior. Mobile-sized desktop browser tests do not replace actual iPhone Safari acceptance.
+TypeScript checking, 70 unit tests and production build passed. Tests cover wallet migration, rewards, pickup ordering, fuse timing and seeded route reachability. Browser gameplay assertions passed for complete three-round dodge and rescue runs, on-car countdown, audio switching, persistence, four portrait viewport sizes and the production subpath. All three actual audio renders are distinct and non-silent with no clipping detected. The browser test Node processes required cleanup after browser exit; gameplay assertions completed. Desktop mobile viewport checks are not physical iPhone Safari tests. Existing large-bundle warning remains.
