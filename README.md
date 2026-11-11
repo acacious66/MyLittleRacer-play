@@ -4,11 +4,11 @@ A portrait HTML5 toy racing game. This public repository contains only the brows
 
 [Play My Little Racer](https://acacious66.github.io/MyLittleRacer-play/)
 
-## English edition — 2026-11-11
+## Play your way
 
-The complete interface, car-preview labels, canvas messages, tooltips, accessibility descriptions, instructions and result screens are in English. Bomb countdowns on the car and in both warning areas display whole seconds, without changing fractional internal timing. English copy wraps within narrow portrait screens. Legacy settings, skins, coins and results remain compatible.
+Build your racer in the garage, collect coins and take on three timed rounds. Dodge staggered bombs or head for blue water to defuse one before the countdown ends. Each round has its own original rock soundtrack.
 
-This branch contains the prepared English update; the live site changes after its PR is merged and Pages deployment succeeds.
+Bomb countdowns display whole seconds on the car and in the HUD. Car settings, skins, coins and results are saved locally in your browser.
 
 ## Gameplay
 
@@ -26,4 +26,4 @@ This branch updates the live site only after its pull request is merged into `ma
 
 ## Validation
 
-TypeScript checking, 70 unit tests and production build passed. English DOM/SVG/canvas and fallback-message audits passed at 320×568 and 390×844, including success, timeout and out-of-lives results and whole-second bomb displays. Four portrait layouts, loot, progression and music checks passed. Tests cover wallet migration, rewards, pickup ordering, fuse timing and seeded route reachability. Browser gameplay assertions passed for complete three-round dodge and rescue runs, on-car countdown, audio switching, persistence, four portrait viewport sizes and the production subpath. All three actual audio renders are distinct and non-silent with no clipping detected. Desktop mobile viewport checks are not physical iPhone Safari tests. Existing large-bundle warning remains.
+TypeScript checking, 70 unit tests and production build passed. DOM/SVG/canvas and fallback-message checks passed at 320×568 and 390×844, including success, timeout and out-of-lives results and whole-second bomb displays. Four portrait layouts, loot, progression and music checks passed. Tests cover wallet migration, rewards, pickup ordering, fuse timing and seeded route reachability. Browser gameplay assertions passed for complete three-round dodge and rescue runs, on-car countdown, audio switching, persistence, four portrait viewport sizes and the production subpath. All three actual audio renders are distinct and non-silent with no clipping detected. Desktop mobile viewport checks are not physical iPhone Safari tests. Existing large-bundle warning remains.
