@@ -22,7 +22,7 @@ Bomb countdowns display whole seconds on the car and in the HUD. Car settings, s
 - Swipe left/right to steer and up/down to accelerate/brake; diagonal gestures combine inputs. Keyboard arrow keys support the same combinations.
 - Three rounds of 4000 metres with 30/25/20-second limits and three lives per round. Pause, exit, timing records and local persistence remain available.
 
-This branch updates the live site only after its pull request is merged into `main` and the Pages workflow succeeds. The existing Pages workflow is unchanged. No game backend is required.
+Updates are published through reviewed pull requests and the existing GitHub Pages workflow. No game backend is required.
 
 ## Validation
 
